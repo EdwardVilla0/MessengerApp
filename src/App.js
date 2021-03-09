@@ -5,24 +5,19 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Header from './components/Header/Header.component';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <div>
+        <>
           <Switch>
-            <Route path="/about">
-
-            </Route>
-            <Route path="/users">
-
-            </Route>
-            <Route path="/">
-
+            <Route path="/" exact>
+              <Header />
             </Route>
           </Switch>
-        </div>
+        </>
       </Router>
     </div>
   );
