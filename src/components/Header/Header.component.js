@@ -3,8 +3,8 @@ import './Header.styles.css';
 
 function Header() {
     return (
-        <div>
-            testing 💟
+        <div className="header">
+
         </div>
     )
 }
