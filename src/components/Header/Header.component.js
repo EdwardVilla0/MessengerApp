@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Avatar } from '@material-ui/core';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import SearchIcon from '@material-ui/icons/Search'
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
 
 function Header() {
@@ -18,11 +19,19 @@ function Header() {
             <input placeholder='search messeages' />
         </HeaderSearch>
 
-        {/* header right */}
+        <HeaderRight>
+            <HelpOutlineIcon />
+        </HeaderRight>
     </HeaderContainer>
 }
 
 export default Header;
+
+const HeaderRight = styled.div`
+flex: 0.3;
+display: flex;
+align-items: center;
+`
 
 const HeaderSearch = styled.div`
 flex: 0.4;
@@ -39,6 +48,9 @@ border: 1px grey solid;
     border: none;
     text-align:center;
     min-width: 30vw;
+    outline: 0;
+    color: white;
+
 }
 `
 
