@@ -51,5 +51,11 @@ padding: 13px;
 `
 
 const SidebarInfo = styled.div`
+flex: 1;
 
+> h2{
+    font-size: 15px;
+    font-weight: 900px;
+    margin-bottom: 5px;
+}
 `
