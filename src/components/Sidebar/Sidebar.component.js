@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
+import CreateIcon from '@material-ui/icons/Create'
 
 
 function Sidebar() {
@@ -15,6 +16,7 @@ function Sidebar() {
                             testing
                         </h3>
                     </SidebarInfo>
+                    <CreateIcon />
                 </SidebarHeader>
             </SidebarContainer>
         </div>
@@ -34,7 +36,14 @@ margin-top: 60px;
 `
 
 const SidebarHeader = styled.div`
+display: flex;
+border-bottom: 1px solid #49274b;
+padding-bottom: 10px;
+padding: 13px;
 
+> .MuiSvgIcon-root {
+    
+}
 `
 
 const SidebarInfo = styled.div`
