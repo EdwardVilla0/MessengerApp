@@ -42,7 +42,11 @@ padding-bottom: 10px;
 padding: 13px;
 
 > .MuiSvgIcon-root {
-    
+    padding: 8px;
+    color: #49274b;
+    font-size: 18px;
+    background-color: white;
+    border-radius: 999px;
 }
 `
 
