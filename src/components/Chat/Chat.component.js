@@ -5,15 +5,29 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined'
 import { useSelector } from 'react-redux'
 import { selectRoomId } from '../../features/appSlice'
 import ChatInput from '../ChatInput/ChatInput.component'
+import { useDocument, useCollection } from 'react-firebase-hooks/firestore'
+import { db } from '../../firebase/firebase'
 
 function Chat() {
     const roomId = useSelector(selectRoomId);
+    const [roomDetails] = useDocument(
+        roomId && db.collection('rooms').doc(roomId)
+    )
+
+    const [roomMessages] = useCollection(
+        roomId &&
+        db
+            .collection('rooms')
+            .doc(roomId)
+            .collection('messages')
+            .orderBy('timestamp', 'asc')
+    )
     return (
         <ChatContainer>
             <>
                 <Header>
                     <HeaderLeft>
-                        <h4><strong>#Room-name</strong></h4>
+                        <h4><strong>#{roomDetails?.data().name}</strong></h4>
                         <StarBorderOutlinedIcon />
                     </HeaderLeft>
 
@@ -26,6 +40,7 @@ function Chat() {
 
                 <ChatMesseges></ChatMesseges>
                 <ChatInput
+                    channelName={roomDetails?.data().name}
                     channelId={roomId}
                 />
             </>
