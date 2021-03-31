@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { db } from '../../firebase/firebase';
 import firebase from 'firebase';
 
-function ChatInput({ channelName, channelId }) {
+function ChatInput({ channelName, channelId, chatRef }) {
     const [input, setInput] = useState("");
     console.log(channelId);
 
@@ -22,6 +22,10 @@ function ChatInput({ channelName, channelId }) {
                 user: 'Edward',
                 userImage: 'https://media-exp1.licdn.com/dms/image/C5603AQGxhJKSQurNHw/profile-displayphoto-shrink_100_100/0/1604963079350?e=1620864000&v=beta&t=IQ8DUeRn1y8Qds2Qdnfz_bLV2wrQpGCv-QlNyG_alBU'
             });
+
+        chatRef.current.scrollIntoView({
+            behavior: "smooth",
+        })
 
         setInput('');
 

@@ -8,6 +8,7 @@ import ChatInput from '../ChatInput/ChatInput.component'
 import { useDocument, useCollection } from 'react-firebase-hooks/firestore'
 import { db } from '../../firebase/firebase'
 import Message from '../Message/Message.component'
+import { SportsMotorsportsSharp } from '@material-ui/icons'
 
 function Chat() {
     const chatRef = useRef(null);
@@ -26,7 +27,9 @@ function Chat() {
     )
 
     useEffect(() => {
-        chatRef?.current?.scrollIntoView();
+        chatRef?.current?.scrollIntoView({
+            behavior: "smooth",
+        });
     }, [roomId, loading])
 
     return (
@@ -62,6 +65,7 @@ function Chat() {
                     <ChatBottom ref={chatRef} />
                 </ChatMesseges>
                 <ChatInput
+                    chatRef={chatRef}
                     channelName={roomDetails?.data().name}
                     channelId={roomId}
                 />
