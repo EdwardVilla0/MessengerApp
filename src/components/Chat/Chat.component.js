@@ -8,7 +8,6 @@ import ChatInput from '../ChatInput/ChatInput.component'
 import { useDocument, useCollection } from 'react-firebase-hooks/firestore'
 import { db } from '../../firebase/firebase'
 import Message from '../Message/Message.component'
-import { SportsMotorsportsSharp } from '@material-ui/icons'
 
 function Chat() {
     const chatRef = useRef(null);

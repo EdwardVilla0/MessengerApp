@@ -7,7 +7,7 @@ function Message({ message, timestamp, user, userImage }) {
         <MessageContainer>
             <img
                 src={userImage}
-                alt='image'
+                alt=''
             />
             <MessageInfo>
                 <h4>

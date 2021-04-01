@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import React from 'react'
 import { db } from '../../../firebase/firebase';
-import { useCollection } from 'react-firebase-hooks/firestore';
 import { useDispatch } from 'react-redux';
 import { enterRoom } from '../../../features/appSlice';
 

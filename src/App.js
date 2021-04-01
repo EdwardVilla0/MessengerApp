@@ -14,7 +14,7 @@ import { auth } from './firebase/firebase';
 import Login from './components/Login/Login.component';
 
 function App() {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
 
   return (
